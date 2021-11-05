@@ -95,9 +95,10 @@ The following specs were used to create the original solution.
 │   ├── train.py
 │   └── trainer_qa.py                   
 │
-└── data/                     
+└── data/
     ├── train_dataset/
-    └── test_dataset/
+    ├── test_dataset/
+    └── wikipedia_documents.json
 ```
 
 ## Detail
