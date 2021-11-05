@@ -1,5 +1,8 @@
 # mrc-level2-nlp-16
 
+## Team Wrap-up Report
+  * [notion](https://glossy-crib-1b1.notion.site/_level2_mrc_16-fef387ea8c734952a9eacf4ddb78c707)
+
 ## Table of Contents
   1. [Project Overview](#Project-Overview)
   2. [Getting Started](#Getting-Started)
@@ -113,8 +116,7 @@ The following specs were used to create the original solution.
     └── wikipedia_documents.json
 ```
 
-## Detail
-  * Team Report [notion](https://glossy-crib-1b1.notion.site/_level2_mrc_16-fef387ea8c734952a9eacf4ddb78c707)
+
 
 
 
