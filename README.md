@@ -47,8 +47,60 @@ The following specs were used to create the original solution.
 - NVIDIA Tesla V100-SXM2-32GB
 
 ## Code Structure
+```
+├── code/      
+│   ├── install/
+│   │   └── install_requirements.sh
+│   │
+│   ├── reader/
+│   │   ├── ConvModel.py
+│   │   ├── LSTMConvModel.py
+│   │   ├── LSTMModel.py
+│   │   ├── RNNConvModel.py
+│   │   └── models.py
+│   │
+│   ├── retriever/
+│   │   ├── coil/
+│   │   │   ├── data_helper/
+│   │   │   │   ├── build_train_from_triplet.py
+│   │   │   │   └── make_triplet.py
+│   │   │   ├── retrieve/
+│   │   │   │   ├── retriever_ext/
+│   │   │   │   │   ├── scatter.pyx
+│   │   │   │   │   └── setup.py
+│   │   │   │   ├── format-query.py
+│   │   │   │   ├── merger.py
+│   │   │   │   ├── retriever-fast.py
+│   │   │   │   └── sharding.py
+│   │   │   ├── arguments.py
+│   │   │   ├── macro_datasets.py
+│   │   │   ├── modeling.py
+│   │   │   ├── run_macro.py
+│   │   │   ├── score_to_macro.py
+│   │   │   ├── trainer.py
+│   │   │   └── coil_tutorial.md
+│   │   │
+│   │   ├── elastic_search/
+│   │   │   └── elasticsearch_retriever.md
+│   │   │
+│   │   ├── bm25.py
+│   │   ├── coil.py
+│   │   └── tfidf.py
+│   │
+│   ├── arguments.py
+│   ├── argumentation.py
+│   ├── inference.py
+│   ├── postprocess.py
+│   ├── preprocess.py
+│   ├── train.py
+│   └── trainer_qa.py                   
+│
+└── data/                     
+    ├── train_dataset/
+    └── test_dataset/
+```
 
 ## Detail
-  
+
 
 
