@@ -114,7 +114,7 @@ The following specs were used to create the original solution.
 ```
 
 ## Detail
-  * Team Report ([notion] )
+  * Team Report ([notion] https://glossy-crib-1b1.notion.site/_level2_mrc_16-fef387ea8c734952a9eacf4ddb78c707)
 
 
 
