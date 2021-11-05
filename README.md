@@ -9,20 +9,31 @@
 
 ## Project Overview
   * 목표
-
+    * 사전에 구축되어있는 Knowledge resourse에서 질문의 답을 찾는 Open-Domain Question Answering(ODQA) 구축
   * 모델
+    * Retriever: COIL + ElasticSearch (query+context 150개)
+    * Reader: SoftVoting(conv + lstm_conv + rnn_conv + base + bert_base(conv))
 
   * Data
+    * train_dataset: 3952개 train set/ 240개 Validation set
+    * test_dataset: 240개 public validatoin set / 360개 private validation set  
+    * Wikipedia_dataset
 
   * Result
+    * Public
+      * Exact Match: 70.000
+      * F1 Score: 79.490
+    * Private
+      * Exact Match: 64.170
+      * F1 Score: 75.810
 
   * Contributors
-    * 김아경([github](https://github.com/EP000)): 
-    * 김현욱([github](https://github.com/powerwook)): 
-    * 김황대([github](https://github.com/kimhwangdae)): 
-    * 박상류([github](https://github.com/psrpsj)): 
-    * 정재현([github](https://github.com/JHyunJung)): 
-    * 최윤성([github](https://github.com/choi-yunsung)): 
+    * 김아경([github](https://github.com/EP000)): EDA, Negative Sampling, Post-Porcessing
+    * 김현욱([github](https://github.com/powerwook)): Elastic-search
+    * 김황대([github](https://github.com/kimhwangdae)): Retriever (DPR, COIL, Retriever , Retriver ensemble, Elasticsearch ensemble), Data Augmentation && Reader(Train Dataset Negative sampling 후, Reader 학습 진행), contexts joining delimiter 실험 
+    * 박상류([github](https://github.com/psrpsj)): K-Fold 구현, Ensemble 구현, Pre-processing, Post-Processing 실험
+    * 정재현([github](https://github.com/JHyunJung)): ElasticSearch , Addquery 제작
+    * 최윤성([github](https://github.com/choi-yunsung)): Reader (custom_layer, qestion_token span masking), Retriever (BM25, COIL), Data Augmentation (question generation, backtranslation), Ensemble (soft-votting) 구현 및 실험
 
 ## Getting Started
   * Install requirements
@@ -31,14 +42,15 @@
       apt install default-jdk
       
       # requirement 설치
-      pip install -r requirements.txt 
+      bash ./install/install_requirements.sh
     ```
   * Train model
     ``` bash
-
+    python train.py --output_dir ./models/train_dataset --do_train [if use K-fold add --do_kfold]
     ```
   * Inference Model
-
+    ``` bash
+    python inference.py --output_dir ./outputs/test_dataset/ --dataset_name ../data/test_dataset/ --model_name_or_path ./models/train_dataset/ --do_predict [if use K-fold add --do_kfold]
     ```
 ## Hardware
 The following specs were used to create the original solution.
@@ -102,6 +114,7 @@ The following specs were used to create the original solution.
 ```
 
 ## Detail
+  * Team Report ([notion] )
 
 
 
